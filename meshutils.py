@@ -87,7 +87,7 @@ def clean_mesh(verts, faces, v_pct=1, min_f=8, min_d=5, repair=True, remesh=True
     ms.meshing_remove_unreferenced_vertices() # verts not refed by any faces
 
     if v_pct > 0:
-        ms.meshing_merge_close_vertices(threshold=pml.Percentage(v_pct)) # 1/10000 of bounding box diagonal
+        ms.meshing_merge_close_vertices(threshold=pml.PercentageValue(v_pct)) # 1/10000 of bounding box diagonal
 
     ms.meshing_remove_duplicate_faces() # faces defined by the same verts
     ms.meshing_remove_null_faces() # faces with area == 0
